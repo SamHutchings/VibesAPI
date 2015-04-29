@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(Vibes.Startup))]
+[assembly: OwinStartup(typeof(Vibes.Web.Startup))]
 
-namespace Vibes
+namespace Vibes.Web
 {
     public partial class Startup
     {

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Vibes
+namespace Vibes.Web
 {
 	public class FilterConfig
 	{

@@ -8,10 +8,10 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using Vibes.Providers;
-using Vibes.Models;
+using Vibes.Web.Providers;
+using Vibes.Web.Models;
 
-namespace Vibes
+namespace Vibes.Web
 {
     public partial class Startup
     {

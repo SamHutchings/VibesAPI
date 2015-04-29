@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace Vibes.Models
+namespace Vibes.Web.Models
 {
     // Models used as parameters to AccountController actions.
 

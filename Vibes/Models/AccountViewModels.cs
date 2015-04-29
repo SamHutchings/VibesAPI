@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Vibes.Models
+namespace Vibes.Web.Models
 {
     // Models returned by AccountController actions.
 

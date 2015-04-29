@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Vibes
+namespace Vibes.Web
 {
 	public class BundleConfig
 	{
