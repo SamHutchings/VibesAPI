@@ -8,11 +8,14 @@ namespace Vibes.Web.Controllers
 {
 	public class HomeController : Controller
 	{
-		public ActionResult Index()
+		public void GetExistingUsers()
 		{
-			ViewBag.Title = "Home Page";
 
-			return View();
+		}
+
+		public void SendVibe()
+		{
+
 		}
 	}
 }
