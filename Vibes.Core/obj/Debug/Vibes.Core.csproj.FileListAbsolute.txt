@@ -1,5 +1,0 @@
-C:\Development\VibesAPI\Vibes.Core\bin\Debug\Vibes.Core.dll
-C:\Development\VibesAPI\Vibes.Core\bin\Debug\Vibes.Core.pdb
-C:\Development\VibesAPI\Vibes.Core\obj\Debug\Vibes.Core.csprojResolveAssemblyReference.cache
-C:\Development\VibesAPI\Vibes.Core\obj\Debug\Vibes.Core.dll
-C:\Development\VibesAPI\Vibes.Core\obj\Debug\Vibes.Core.pdb
