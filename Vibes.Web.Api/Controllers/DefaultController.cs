@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Vibes.Web.Api.Controllers
 {
-    public class DefaultController : Controller
-    {
-    }
+	public class DefaultController : Controller
+	{
+	}
 }
