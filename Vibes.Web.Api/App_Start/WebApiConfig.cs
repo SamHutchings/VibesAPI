@@ -5,6 +5,8 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using System.Net.Http.Headers;
+using System.Web.Http.ExceptionHandling;
 
 namespace Vibes.Web.Api
 {
@@ -20,10 +22,14 @@ namespace Vibes.Web.Api
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            config.Services.Add(typeof(IExceptionLogger), new CustomExceptionLogger());
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "{controller}/{id}/{action}",
+                defaults: new { controller = "Default", id = RouteParameter.Optional, action = RouteParameter.Optional }
             );
         }
     }
