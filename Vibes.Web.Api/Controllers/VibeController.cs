@@ -6,11 +6,11 @@
 
 	public class VibeController : ApiController
 	{
-		public IHttpActionResult Get(string id)
-		{
-			throw new NotImplementedException();
-		}
-
+		/// <summary>
+		/// Sends the vibe to the specified recipient
+		/// </summary>
+		/// <param name="vibe"></param>
+		/// <returns></returns>
 		public IHttpActionResult Post(Vibe vibe)
 		{
 			throw new NotImplementedException();
