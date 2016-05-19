@@ -7,7 +7,6 @@ namespace Vibes.Web.Api.Infrastructure
 	{
 		public override void Load()
 		{
-
 		}
 	}
 }
