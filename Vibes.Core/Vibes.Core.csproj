@@ -54,7 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Device.cs" />
     <Compile Include="Domain\DomainObject.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Domain\Vibe.cs" />
