@@ -2,7 +2,7 @@
 
 namespace Vibes.Web.Api.Controllers
 {
-	public class DefaultController : ApiController
-	{
-	}
+	public class ContactController : ApiController
+    {
+    }
 }

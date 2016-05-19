@@ -10,5 +10,9 @@ namespace Vibes.Core.Domain
 		public User To { get; set; }
 
 		public VibeType Type { get; set; }
+
+		public DateTime? Delivered { get; set; }
+
+		public DateTime? Received { get; set; }
 	}
 }
