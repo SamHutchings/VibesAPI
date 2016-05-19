@@ -9,6 +9,6 @@ namespace Vibes.Core.Data
 {
 	public class PersistenceModel : AutoPersistenceModel
 	{
-		public PersistenceModel() : base(new MappingConfiguration()) { }
+		public PersistenceModel() : base(new VibesMappingConfiguration()) { }
 	}
 }

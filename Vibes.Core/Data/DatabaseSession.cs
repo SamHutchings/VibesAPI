@@ -15,7 +15,7 @@ namespace Vibes.Core.Data
 		public DatabaseSession(ISession session)
 		{
 			_session = session;
-        }
+		}
 
 		public EntityMode ActiveEntityMode
 		{
