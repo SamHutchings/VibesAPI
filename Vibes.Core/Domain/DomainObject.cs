@@ -6,7 +6,7 @@ namespace Vibes.Core.Domain
 	/// Base database object
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public class DomainObject<T>
+	public abstract class DomainObject<T>
 	{
 		public T Id { get; set; }
 
