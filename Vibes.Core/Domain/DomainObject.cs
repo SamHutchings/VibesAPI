@@ -8,8 +8,13 @@ namespace Vibes.Core.Domain
 	/// <typeparam name="T"></typeparam>
 	public abstract class DomainObject<T>
 	{
-		public T Id { get; set; }
+		public virtual T Id { get; set; }
 
-		public DateTime Created { get; }
+		public virtual DateTime Created { get; }
+
+		public DomainObject()
+		{
+			Created = DateTime.Now;
+		}
 	}
 }

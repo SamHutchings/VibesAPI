@@ -5,6 +5,8 @@ using NHibernate.Type;
 using System;
 using System.Data;
 using System.Linq.Expressions;
+using System.Linq;
+using NHibernate.Linq;
 
 namespace Vibes.Core.Data
 {
@@ -15,6 +17,31 @@ namespace Vibes.Core.Data
 		public DatabaseSession(ISession session)
 		{
 			_session = session;
+		}
+
+		public IQueryable<T> Query<T>()
+		{
+			return _session.Query<T>();
+		}
+
+		public object Save(object obj)
+		{
+			return _session.Save(obj);
+		}
+
+		public void Delete(object obj)
+		{
+			_session.Delete(obj);
+		}
+
+		public T Get<T>(object id)
+		{
+			return _session.Get<T>(id);
+		}
+
+		public object Get(Type clazz, object id)
+		{
+			return _session.Get(clazz, id);
 		}
 
 		public EntityMode ActiveEntityMode
@@ -202,11 +229,6 @@ namespace Vibes.Core.Data
 			throw new NotImplementedException();
 		}
 
-		public void Delete(object obj)
-		{
-			throw new NotImplementedException();
-		}
-
 		public void Delete(string entityName, object obj)
 		{
 			throw new NotImplementedException();
@@ -256,18 +278,8 @@ namespace Vibes.Core.Data
 		{
 			throw new NotImplementedException();
 		}
-
-		public object Get(Type clazz, object id)
-		{
-			throw new NotImplementedException();
-		}
-
+		
 		public object Get(Type clazz, object id, LockMode lockMode)
-		{
-			throw new NotImplementedException();
-		}
-
-		public T Get<T>(object id)
 		{
 			throw new NotImplementedException();
 		}
@@ -443,11 +455,6 @@ namespace Vibes.Core.Data
 		}
 
 		public void Replicate(string entityName, object obj, ReplicationMode replicationMode)
-		{
-			throw new NotImplementedException();
-		}
-
-		public object Save(object obj)
 		{
 			throw new NotImplementedException();
 		}

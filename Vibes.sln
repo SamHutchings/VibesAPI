@@ -7,25 +7,41 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vibes.Core", "Vibes.Core\Vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vibes.Web.Api", "Vibes.Web.Api\Vibes.Web.Api.csproj", "{0740FFD9-2777-476D-9868-00E17685A5F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vibes.Core.Test", "Vibes.Core.Test\Vibes.Core.Test.csproj", "{D75FDD5C-84C6-415E-83D5-3A7E16EB7D65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vibes.Web.Api.Test", "Vibes.Web.Api.Test\Vibes.Web.Api.Test.csproj", "{48C49D1E-D56D-4CE9-A6A4-9B3EEB2ED369}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Live|Any CPU = Live|Any CPU
 		Staging|Any CPU = Staging|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DD69AA08-07CC-4B7E-A8BF-5E40554A24C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD69AA08-07CC-4B7E-A8BF-5E40554A24C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD69AA08-07CC-4B7E-A8BF-5E40554A24C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD69AA08-07CC-4B7E-A8BF-5E40554A24C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD69AA08-07CC-4B7E-A8BF-5E40554A24C5}.Live|Any CPU.ActiveCfg = Release|Any CPU
+		{DD69AA08-07CC-4B7E-A8BF-5E40554A24C5}.Live|Any CPU.Build.0 = Release|Any CPU
 		{DD69AA08-07CC-4B7E-A8BF-5E40554A24C5}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{DD69AA08-07CC-4B7E-A8BF-5E40554A24C5}.Staging|Any CPU.Build.0 = Staging|Any CPU
 		{0740FFD9-2777-476D-9868-00E17685A5F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0740FFD9-2777-476D-9868-00E17685A5F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0740FFD9-2777-476D-9868-00E17685A5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0740FFD9-2777-476D-9868-00E17685A5F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0740FFD9-2777-476D-9868-00E17685A5F6}.Live|Any CPU.ActiveCfg = Release|Any CPU
+		{0740FFD9-2777-476D-9868-00E17685A5F6}.Live|Any CPU.Build.0 = Release|Any CPU
 		{0740FFD9-2777-476D-9868-00E17685A5F6}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{0740FFD9-2777-476D-9868-00E17685A5F6}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{D75FDD5C-84C6-415E-83D5-3A7E16EB7D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75FDD5C-84C6-415E-83D5-3A7E16EB7D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75FDD5C-84C6-415E-83D5-3A7E16EB7D65}.Live|Any CPU.ActiveCfg = Release|Any CPU
+		{D75FDD5C-84C6-415E-83D5-3A7E16EB7D65}.Live|Any CPU.Build.0 = Release|Any CPU
+		{D75FDD5C-84C6-415E-83D5-3A7E16EB7D65}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{D75FDD5C-84C6-415E-83D5-3A7E16EB7D65}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{48C49D1E-D56D-4CE9-A6A4-9B3EEB2ED369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48C49D1E-D56D-4CE9-A6A4-9B3EEB2ED369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48C49D1E-D56D-4CE9-A6A4-9B3EEB2ED369}.Live|Any CPU.ActiveCfg = Release|Any CPU
+		{48C49D1E-D56D-4CE9-A6A4-9B3EEB2ED369}.Live|Any CPU.Build.0 = Release|Any CPU
+		{48C49D1E-D56D-4CE9-A6A4-9B3EEB2ED369}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{48C49D1E-D56D-4CE9-A6A4-9B3EEB2ED369}.Staging|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

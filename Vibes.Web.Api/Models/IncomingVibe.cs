@@ -4,7 +4,7 @@ namespace Vibes.Web.Api.Models
 {
 	public class IncomingVibe
 	{
-		public string From { get; set; }
+		public string To { get; set; }
 
 		public VibeType VibeType { get; set; }
 	}
