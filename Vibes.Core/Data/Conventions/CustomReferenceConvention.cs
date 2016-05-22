@@ -20,7 +20,7 @@ namespace Vibes.Core.Data.Conventions
 			else
 				instance.Column(instance.Class.GetUnderlyingSystemType() + "Id");
 
-			instance.ForeignKey(String.Format("FK_{0}_{1}", instance.EntityType.Name, instance.Name);
+			instance.ForeignKey(String.Format("FK_{0}_{1}", instance.EntityType.Name, instance.Name));
 		}
 	}
 }

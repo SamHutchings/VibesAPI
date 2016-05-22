@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using Vibes.Core.Data;
+using Vibes.Core.Domain;
 
 namespace Vibes.Web.Api.Controllers
 {
@@ -10,5 +11,13 @@ namespace Vibes.Web.Api.Controllers
 	public class BaseApiController : ApiController
 	{
 		public IDatabaseSession Session { get; set; }
+
+		public User AuthorisedUser
+		{
+			get
+			{
+				return null;
+			}
+		}
 	}
 }

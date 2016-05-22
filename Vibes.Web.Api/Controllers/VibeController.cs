@@ -1,19 +1,31 @@
 ﻿namespace Vibes.Web.Api.Controllers
 {
-	using System.Web.Http;
 	using Core.Domain;
-	using System;
+	using Models;
+	using System.Linq;
+	using System.Web.Http;
 
-	public class VibeController : ApiController
+	public class VibeController : BaseApiController
 	{
 		/// <summary>
 		/// Sends the vibe to the specified recipient
 		/// </summary>
 		/// <param name="vibe"></param>
 		/// <returns></returns>
-		public IHttpActionResult Post(Vibe vibe)
+		public IHttpActionResult Post(IncomingVibe vibe)
 		{
-			throw new NotImplementedException();
+			var userTo = Session.Query<User>().Where(x => x.PhoneNumber == vibe.To).FirstOrDefault();
+
+			if (userTo == null)
+			{
+				ModelState.AddModelError("To", "This user could not be found");
+
+				return BadRequest(ModelState);
+			}
+
+			Session.Save(new Vibe { From = AuthorisedUser, To = userTo, Type = vibe.VibeType });
+
+			return Ok();
 		}
 	}
 }
