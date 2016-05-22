@@ -34,12 +34,5 @@ namespace Vibes.Core.Domain
 		/// When the user was validated
 		/// </summary>
 		public virtual DateTime? Validated { get; set; }
-
-		public virtual ISet<Vibe> Vibes { get; set; }
-
-		public User()
-		{
-			Vibes = new HashSet<Vibe>();
-		}
 	}
 }

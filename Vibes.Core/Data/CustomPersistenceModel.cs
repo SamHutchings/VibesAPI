@@ -10,7 +10,6 @@ namespace Vibes.Core.Data
 		{
 			AddEntityAssembly(Assembly.Load("Vibes.Core"))
 				.Conventions.AddAssembly(Assembly.Load("Vibes.Core"))
-				.UseOverridesFromAssembly(Assembly.Load("Vibes.Core"))
 				.Conventions.Add(ForeignKey.EndsWith("Id"), DefaultCascade.SaveUpdate());
 		}
 	}

@@ -11,5 +11,10 @@ namespace Vibes.Core.Domain
 		public virtual T Id { get; set; }
 
 		public virtual DateTime Created { get; }
+
+		public DomainObject()
+		{
+			Created = DateTime.Now;
+		}
 	}
 }
