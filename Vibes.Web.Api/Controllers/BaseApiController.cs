@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using Ninject;
+using System.Web.Http;
 using Vibes.Core.Data;
 using Vibes.Core.Domain;
 
@@ -10,7 +11,7 @@ namespace Vibes.Web.Api.Controllers
 	/// </summary>
 	public class BaseApiController : ApiController
 	{
-		public IDatabaseSession Session { get; set; }
+		protected readonly IDatabaseSession _session;
 
 		public User AuthorisedUser
 		{
@@ -18,6 +19,11 @@ namespace Vibes.Web.Api.Controllers
 			{
 				return null;
 			}
+		}
+
+		public BaseApiController(IDatabaseSession session)
+		{
+			_session = session;
 		}
 	}
 }

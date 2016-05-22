@@ -4,9 +4,12 @@
 	using Models;
 	using System.Linq;
 	using System.Web.Http;
+	using Core.Data;
 
 	public class VibeController : BaseApiController
 	{
+		public VibeController(IDatabaseSession session) : base(session) { }
+
 		/// <summary>
 		/// Sends the vibe to the specified recipient
 		/// </summary>
@@ -14,7 +17,7 @@
 		/// <returns></returns>
 		public IHttpActionResult Post(IncomingVibe vibe)
 		{
-			var userTo = Session.Query<User>().Where(x => x.PhoneNumber == vibe.To).FirstOrDefault();
+			var userTo = _session.Query<User>().Where(x => x.PhoneNumber == vibe.To).FirstOrDefault();
 
 			if (userTo == null)
 			{
@@ -23,7 +26,7 @@
 				return BadRequest(ModelState);
 			}
 
-			Session.Save(new Vibe { From = AuthorisedUser, To = userTo, Type = vibe.VibeType });
+			_session.Save(new Vibe { From = AuthorisedUser, To = userTo, Type = vibe.VibeType });
 
 			return Ok();
 		}
