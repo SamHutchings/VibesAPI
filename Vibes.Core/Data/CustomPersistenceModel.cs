@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Vibes.Core.Data
 {
-	public class PersistenceModel : AutoPersistenceModel
+	public class CustomPersistenceModel : AutoPersistenceModel
 	{
-		public PersistenceModel() : base(new VibesMappingConfiguration()) { }
+		public CustomPersistenceModel() : base(new VibesMappingConfiguration()) { }
 	}
 }
