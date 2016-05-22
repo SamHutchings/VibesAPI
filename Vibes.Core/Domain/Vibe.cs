@@ -5,14 +5,14 @@ namespace Vibes.Core.Domain
 {
 	public class Vibe : DomainObject<Guid>
 	{
-		public User From { get; set; }
+		public virtual User From { get; set; }
 
-		public User To { get; set; }
+		public virtual User To { get; set; }
 
-		public VibeType Type { get; set; }
+		public virtual VibeType Type { get; set; }
 
-		public DateTime? Delivered { get; set; }
+		public virtual DateTime? Delivered { get; set; }
 
-		public DateTime? Received { get; set; }
+		public virtual DateTime? Received { get; set; }
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Vibes.Core.Domain
 {
@@ -7,31 +8,38 @@ namespace Vibes.Core.Domain
 		/// <summary>
 		/// The user's phone number. This is their unique identifier
 		/// </summary>
-		public string PhoneNumber { get; set; }
+		public virtual string PhoneNumber { get; set; }
 
 		/// <summary>
 		/// The users name. Displayed to others
 		/// </summary>
-		public string Username { get; set; }
+		public virtual string Username { get; set; }
 
 		/// <summary>
 		/// The current device id for the user
 		/// </summary>
-		public string DeviceId { get; set; }
+		public virtual string DeviceId { get; set; }
 
 		/// <summary>
 		/// The validation key the user is sent to validate their phone number
 		/// </summary>
-		public string ValidationKey { get; set; }
+		public virtual string ValidationKey { get; set; }
 
 		/// <summary>
 		/// When the validation key was sent to the user
 		/// </summary>
-		public DateTime? ValidationKeySent { get; set; }
+		public virtual DateTime? ValidationKeySent { get; set; }
 
 		/// <summary>
-		/// 
+		/// When the user was validated
 		/// </summary>
-		public DateTime? Validated { get; set; }
+		public virtual DateTime? Validated { get; set; }
+
+		public virtual ISet<Vibe> Vibes { get; set; }
+
+		public User()
+		{
+			Vibes = new HashSet<Vibe>();
+		}
 	}
 }

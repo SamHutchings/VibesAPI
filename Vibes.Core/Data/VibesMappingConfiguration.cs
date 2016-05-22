@@ -7,7 +7,7 @@ namespace Vibes.Core.Data
 	{
 		public override bool ShouldMap(Type type)
 		{
-			if (type.Namespace.StartsWith("Vibes.Domain"))
+			if (type.Namespace.StartsWith("Vibes.Core.Domain"))
 				return true;
 
 			return false;
