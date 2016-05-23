@@ -10,7 +10,7 @@ namespace Vibes.Web.Api.Controllers
 			return Ok();
 		}
 
-		public IHttpActionResult Post(AccountEdit model)
+		public IHttpActionResult Post(AccountEditModel model)
 		{
 			return Ok();
 		}

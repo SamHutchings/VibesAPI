@@ -12,7 +12,7 @@
 		/// </summary>
 		/// <param name="vibe"></param>
 		/// <returns></returns>
-		public IHttpActionResult Post(IncomingVibe vibe)
+		public IHttpActionResult Post(VibeModel vibe)
 		{
 			var userTo = Session.Query<User>().Where(x => x.PhoneNumber == vibe.To).FirstOrDefault();
 

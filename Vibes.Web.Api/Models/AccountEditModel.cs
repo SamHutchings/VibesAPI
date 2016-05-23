@@ -1,6 +1,6 @@
 ﻿namespace Vibes.Web.Api.Models
 {
-	public class AccountEdit
+	public class AccountEditModel
 	{
 	}
 }

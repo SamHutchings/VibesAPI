@@ -204,8 +204,9 @@
     </Compile>
     <Compile Include="Infrastructure\ApiNinjectModule.cs" />
     <Compile Include="Infrastructure\CustomExceptionLogger.cs" />
-    <Compile Include="Models\AccountEdit.cs" />
-    <Compile Include="Models\IncomingVibe.cs" />
+    <Compile Include="Models\AccountEditModel.cs" />
+    <Compile Include="Models\VibeModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
