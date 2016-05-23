@@ -1,14 +1,17 @@
-﻿using System.Linq;
-using System.Web.Http;
-using Vibes.Core.Domain;
+﻿using System.Web.Http;
+using Vibes.Web.Api.Models;
 
 namespace Vibes.Web.Api.Controllers
 {
 	public class AccountController : BaseApiController
 	{
-		public IHttpActionResult Post(string phoneNumber)
+		public IHttpActionResult Get()
 		{
-			var existingUser = Session.Query<User>().Where(x => x.PhoneNumber == phoneNumber);
+			return Ok();
+		}
+
+		public IHttpActionResult Post(AccountEdit model)
+		{
 			return Ok();
 		}
 	}
