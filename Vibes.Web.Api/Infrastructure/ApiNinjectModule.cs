@@ -47,7 +47,6 @@ namespace Vibes.Web.Api.Infrastructure
 						session.Dispose();
 					}
 				});
-
 		}
 	}
 }

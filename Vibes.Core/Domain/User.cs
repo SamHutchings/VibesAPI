@@ -34,5 +34,13 @@ namespace Vibes.Core.Domain
 		/// When the user was validated
 		/// </summary>
 		public virtual DateTime? Validated { get; set; }
+
+		public override string ToString()
+		{
+			if (String.IsNullOrWhiteSpace(Username))
+				return PhoneNumber;
+
+			return String.Format("{0} ({1})", Username, PhoneNumber);
+		}
 	}
 }
