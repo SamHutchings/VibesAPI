@@ -461,7 +461,7 @@ namespace Vibes.Core.Data
 
 		public object Save(string entityName, object obj)
 		{
-			_session.Save(entityName, obj);
+			return _session.Save(entityName, obj);
 		}
 
 		public void Save(object obj, object id)
@@ -496,7 +496,7 @@ namespace Vibes.Core.Data
 
 		public void SetReadOnly(object entityOrProxy, bool readOnly)
 		{
-			_session.SetReadOnly(entityOrProxy, readOnly);)
+			_session.SetReadOnly(entityOrProxy, readOnly);
 		}
 
 		public void Update(object obj)

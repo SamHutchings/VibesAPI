@@ -1,5 +1,7 @@
 ﻿using FluentNHibernate;
+using log4net;
 using Ninject;
+using Ninject.Activation;
 using Ninject.Modules;
 using Ninject.Web.Common;
 using System;
@@ -12,39 +14,36 @@ namespace Vibes.Web.Api.Infrastructure
 	{
 		public override void Load()
 		{
+			Bind<ILog>().ToMethod(context =>
+					LogManager.GetLogger(context.Request.ParentContext.Plan.Type));
+
 			Bind<ISessionSource>()
 				.ToMethod(x => new SessionSourceFactory().CreateSessionSource(ConfigurationManager.ConnectionStrings["default"].ConnectionString))
 				.InSingletonScope();
 
-			// the session, one done per request
 			Bind<IDatabaseSession>().ToMethod(x => new DatabaseSession(x.Kernel.Get<ISessionSource>().CreateSession()))
 				.InRequestScope()
 				.OnActivation(session =>
 				{
-					// check we've no active trans
-					if (!session.Transaction.IsActive)
-						// if not, begin one
-						session.BeginTransaction();
-				})
-				.OnDeactivation((context, session) =>
+					session.BeginTransaction();
+				}).OnDeactivation((context, session) =>
 				{
 					try
 					{
-						// check we have an active transaction and commit if necessary
 						if (session.Transaction.IsActive)
 							session.Transaction.Commit();
 					}
 					catch (Exception ex)
 					{
+						Kernel.Get<ILog>().Error(ex);
+
 						session.Transaction.Rollback();
 					}
 					finally
 					{
-						// close
 						if (session.IsOpen)
 							session.Close();
 
-						// and dispose
 						session.Dispose();
 					}
 				});
