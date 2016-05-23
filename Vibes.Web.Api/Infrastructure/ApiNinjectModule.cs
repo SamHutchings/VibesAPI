@@ -1,7 +1,6 @@
 ﻿using FluentNHibernate;
 using log4net;
 using Ninject;
-using Ninject.Activation;
 using Ninject.Modules;
 using Ninject.Web.Common;
 using System;
@@ -26,7 +25,8 @@ namespace Vibes.Web.Api.Infrastructure
 				.OnActivation(session =>
 				{
 					session.BeginTransaction();
-				}).OnDeactivation((context, session) =>
+				})
+				.OnDeactivation((context, session) =>
 				{
 					try
 					{

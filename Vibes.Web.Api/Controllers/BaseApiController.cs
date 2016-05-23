@@ -11,7 +11,8 @@ namespace Vibes.Web.Api.Controllers
 	/// </summary>
 	public class BaseApiController : ApiController
 	{
-		protected readonly IDatabaseSession _session;
+		[Inject]
+		public IDatabaseSession Session { get; set; }
 
 		public User AuthorisedUser
 		{
@@ -19,11 +20,6 @@ namespace Vibes.Web.Api.Controllers
 			{
 				return null;
 			}
-		}
-
-		public BaseApiController(IDatabaseSession session)
-		{
-			_session = session;
 		}
 	}
 }
