@@ -23,21 +23,25 @@ namespace Vibes.Core.Domain
 		/// <summary>
 		/// The validation key the user is sent to validate their phone number
 		/// </summary>
-		public virtual string ValidationKey { get; set; }
+		public virtual string ValidationCode { get; set; }
 
 		/// <summary>
 		/// When the validation key was sent to the user
 		/// </summary>
-		public virtual DateTime? ValidationKeySent { get; set; }
+		public virtual DateTime? ValidationCodeSent { get; set; }
 
 		/// <summary>
 		/// When the user was validated
 		/// </summary>
 		public virtual DateTime? Validated { get; set; }
 
-		public void GenerateValidationKey()
+		public virtual void GenerateValidationKey()
 		{
-
+			if (ValidationCodeSent == null || ValidationCodeSent.Value.AddHours(2) < SystemTime.Now)
+			{
+				ValidationCode = Guid.NewGuid().ToString().Substring(0, 6);
+				ValidationCodeSent = SystemTime.Now;
+			}
 		}
 
 		public override string ToString()
