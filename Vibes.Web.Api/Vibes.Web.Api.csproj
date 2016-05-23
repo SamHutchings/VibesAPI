@@ -169,6 +169,8 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -178,6 +180,7 @@
     </Compile>
     <Compile Include="Infrastructure\ApiNinjectModule.cs" />
     <Compile Include="Infrastructure\CustomExceptionLogger.cs" />
+    <Compile Include="Models\AccountEdit.cs" />
     <Compile Include="Models\IncomingVibe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

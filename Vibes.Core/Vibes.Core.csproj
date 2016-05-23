@@ -77,6 +77,7 @@
     <Compile Include="Domain\User.cs" />
     <Compile Include="Domain\Vibe.cs" />
     <Compile Include="Enums\VibeType.cs" />
+    <Compile Include="Extensions\PhoneNumberExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
