@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Http;
 using Vibes.Core.Domain;
+using Vibes.Web.Api.Models;
 
 namespace Vibes.Web.Api.Controllers
 {
@@ -8,9 +9,26 @@ namespace Vibes.Web.Api.Controllers
 	{
 		public IHttpActionResult Post(RegisterModel model)
 		{
-			var 
-			var existingUser = Session.Query<User>().Where(x => x.PhoneNumber == phoneNumber);
-			return Ok();
+			if (ModelState.IsValid)
+			{
+				var user = Session.Query<User>().Where(x => x.PhoneNumber == model.FormattedPhoneNumber).FirstOrDefault();
+
+				if (user == null)
+				{
+					user = new User
+					{
+						PhoneNumber = model.FormattedPhoneNumber
+					};
+
+					Session.Save(user);
+				}
+
+				user.GenerateValidationKey();
+
+				return Ok();
+			}
+
+			return BadRequest(ModelState);
 		}
 	}
 }

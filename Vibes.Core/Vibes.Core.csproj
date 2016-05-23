@@ -80,6 +80,7 @@
     <Compile Include="Enums\VibeType.cs" />
     <Compile Include="Extensions\PhoneNumberExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

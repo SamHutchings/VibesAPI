@@ -35,6 +35,11 @@ namespace Vibes.Core.Domain
 		/// </summary>
 		public virtual DateTime? Validated { get; set; }
 
+		public void GenerateValidationKey()
+		{
+
+		}
+
 		public override string ToString()
 		{
 			if (String.IsNullOrWhiteSpace(Username))
