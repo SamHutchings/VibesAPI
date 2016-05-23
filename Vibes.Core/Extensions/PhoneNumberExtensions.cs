@@ -8,6 +8,6 @@ namespace Vibes.Core.Extensions
 {
 	public static class PhoneNumberExtensions
 	{
-		public static string
-	}
+		public static string FormatE164(string number, CountryCode code)
+    }
 }
