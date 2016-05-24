@@ -5,6 +5,7 @@ using Vibes.Web.Api.Models;
 
 namespace Vibes.Web.Api.Controllers
 {
+	[AllowAnonymous]
 	public class RegisterController : BaseApiController
 	{
 		public IHttpActionResult Post(RegisterModel model)
@@ -25,7 +26,7 @@ namespace Vibes.Web.Api.Controllers
 
 				user.GenerateValidationKey();
 
-				return Ok();
+				return Ok(model);
 			}
 
 			return BadRequest(ModelState);

@@ -9,6 +9,7 @@ namespace Vibes.Web.Api.Controllers
 	/// Base controller for all API controllers
 	/// Used to provide authorisation and shared objects
 	/// </summary>
+	[Authorize]
 	public class BaseApiController : ApiController
 	{
 		[Inject]
