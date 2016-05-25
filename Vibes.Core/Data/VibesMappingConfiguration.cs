@@ -1,4 +1,5 @@
-﻿using FluentNHibernate.Automapping;
+﻿using FluentNHibernate;
+using FluentNHibernate.Automapping;
 using System;
 
 namespace Vibes.Core.Data
@@ -11,6 +12,17 @@ namespace Vibes.Core.Data
 				return true;
 
 			return false;
+		}
+
+		public override bool ShouldMap(Member member)
+		{
+			if (!member.IsPublic)
+				return false;
+
+			if (!member.CanWrite)
+				return false;
+
+			return base.ShouldMap(member);
 		}
 	}
 }

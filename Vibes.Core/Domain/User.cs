@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Configuration;
+using Vibes.Core.Extensions;
 
 namespace Vibes.Core.Domain
 {
@@ -37,6 +39,20 @@ namespace Vibes.Core.Domain
 		/// When the user was validated
 		/// </summary>
 		public virtual DateTime? Validated { get; set; }
+
+		/// <summary>
+		/// When the user validation expires
+		/// </summary>
+		public virtual DateTime? ValidationExpires
+		{
+			get
+			{
+				if (ValidationCodeSent == null)
+					return null;
+
+				return ValidationCodeSent.Value.AddHours(ConfigurationManager.AppSettings["validation-expiry-hours"].ToInt(2));
+			}
+		}
 
 		public virtual void GenerateValidationKey()
 		{

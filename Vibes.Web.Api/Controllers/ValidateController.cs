@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
+using Vibes.Core;
 using Vibes.Web.Api.Models;
 
 namespace Vibes.Web.Api.Controllers
@@ -13,10 +10,17 @@ namespace Vibes.Web.Api.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				if (AuthorisedUser.ValidationCode != model.ValidationCode)
-				{
+				if (AuthorisedUser.Validated != null)
+					return Ok();
 
+				if (AuthorisedUser.ValidationCode == model.ValidationCode && AuthorisedUser.ValidationExpires >= SystemTime.Now)
+				{
+					AuthorisedUser.Validated = SystemTime.Now;
+
+					return Ok(model);
 				}
+
+				ModelState.AddModelError("ValidationCode", "We couldn't find this code");
 			}
 
 			return BadRequest(ModelState);
