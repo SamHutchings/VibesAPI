@@ -185,6 +185,7 @@
     </Compile>
     <Compile Include="Infrastructure\ApiNinjectModule.cs" />
     <Compile Include="Infrastructure\CustomExceptionLogger.cs" />
+    <Compile Include="Infrastructure\ModelBinders\UserModelBinder.cs" />
     <Compile Include="Models\AccountEditModel.cs" />
     <Compile Include="Models\ValidateModel.cs" />
     <Compile Include="Models\VibeModel.cs" />

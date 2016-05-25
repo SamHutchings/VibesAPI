@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Vibes.Core.Domain
 {
@@ -8,6 +9,7 @@ namespace Vibes.Core.Domain
 		/// <summary>
 		/// The user's phone number. This is their unique identifier
 		/// </summary>
+		[DataType(DataType.PhoneNumber)]
 		public virtual string PhoneNumber { get; set; }
 
 		/// <summary>
@@ -23,6 +25,7 @@ namespace Vibes.Core.Domain
 		/// <summary>
 		/// The validation key the user is sent to validate their phone number
 		/// </summary>
+		[StringLength(10)]
 		public virtual string ValidationCode { get; set; }
 
 		/// <summary>

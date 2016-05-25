@@ -1,10 +1,13 @@
-﻿using Vibes.Core.Enums;
+﻿using System.Web.Http.ModelBinding;
+using Vibes.Core.Domain;
+using Vibes.Core.Enums;
 
 namespace Vibes.Web.Api.Models
 {
 	public class VibeModel
 	{
-		public string To { get; set; }
+		[ModelBinder(typeof(UserModelBinder))]
+		public User To { get; set; }
 
 		public VibeType VibeType { get; set; }
 	}
