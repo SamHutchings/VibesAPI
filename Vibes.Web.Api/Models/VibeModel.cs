@@ -2,7 +2,7 @@
 
 namespace Vibes.Web.Api.Models
 {
-	public class IncomingVibe
+	public class VibeModel
 	{
 		public string To { get; set; }
 

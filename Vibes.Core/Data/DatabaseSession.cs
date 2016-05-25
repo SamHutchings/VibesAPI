@@ -69,7 +69,7 @@ namespace Vibes.Core.Data
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _session.Connection;
 			}
 		}
 
@@ -103,7 +103,7 @@ namespace Vibes.Core.Data
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _session.IsConnected;
 			}
 		}
 
@@ -111,7 +111,7 @@ namespace Vibes.Core.Data
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _session.IsOpen;
 			}
 		}
 
@@ -119,7 +119,7 @@ namespace Vibes.Core.Data
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _session.SessionFactory;
 			}
 		}
 
@@ -135,18 +135,18 @@ namespace Vibes.Core.Data
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _session.Transaction;
 			}
 		}
 
 		public ITransaction BeginTransaction()
 		{
-			throw new NotImplementedException();
+			return _session.BeginTransaction();
 		}
 
 		public ITransaction BeginTransaction(IsolationLevel isolationLevel)
 		{
-			throw new NotImplementedException();
+			return _session.BeginTransaction(isolationLevel);
 		}
 
 		public void CancelQuery()
@@ -161,7 +161,7 @@ namespace Vibes.Core.Data
 
 		public IDbConnection Close()
 		{
-			throw new NotImplementedException();
+			return _session.Close();
 		}
 
 		public bool Contains(object obj)
@@ -251,12 +251,12 @@ namespace Vibes.Core.Data
 
 		public IDbConnection Disconnect()
 		{
-			throw new NotImplementedException();
+			return _session.Disconnect();
 		}
 
 		public void Dispose()
 		{
-			throw new NotImplementedException();
+			_session.Dispose();
 		}
 
 		public IFilter EnableFilter(string filterName)
@@ -278,7 +278,7 @@ namespace Vibes.Core.Data
 		{
 			throw new NotImplementedException();
 		}
-		
+
 		public object Get(Type clazz, object id, LockMode lockMode)
 		{
 			throw new NotImplementedException();
@@ -461,62 +461,62 @@ namespace Vibes.Core.Data
 
 		public object Save(string entityName, object obj)
 		{
-			throw new NotImplementedException();
+			return _session.Save(entityName, obj);
 		}
 
 		public void Save(object obj, object id)
 		{
-			throw new NotImplementedException();
+			_session.Save(obj, id);
 		}
 
 		public void Save(string entityName, object obj, object id)
 		{
-			throw new NotImplementedException();
+			_session.Save(entityName, obj, id);
 		}
 
 		public void SaveOrUpdate(object obj)
 		{
-			throw new NotImplementedException();
+			_session.SaveOrUpdate(obj);
 		}
 
 		public void SaveOrUpdate(string entityName, object obj)
 		{
-			throw new NotImplementedException();
+			_session.SaveOrUpdate(entityName, obj);
 		}
 
 		public void SaveOrUpdate(string entityName, object obj, object id)
 		{
-			throw new NotImplementedException();
+			_session.SaveOrUpdate(entityName, obj, id);
 		}
 
 		public ISession SetBatchSize(int batchSize)
 		{
-			throw new NotImplementedException();
+			return _session.SetBatchSize(batchSize);
 		}
 
 		public void SetReadOnly(object entityOrProxy, bool readOnly)
 		{
-			throw new NotImplementedException();
+			_session.SetReadOnly(entityOrProxy, readOnly);
 		}
 
 		public void Update(object obj)
 		{
-			throw new NotImplementedException();
+			_session.Update(obj);
 		}
 
 		public void Update(string entityName, object obj)
 		{
-			throw new NotImplementedException();
+			_session.Update(entityName, obj);
 		}
 
 		public void Update(object obj, object id)
 		{
-			throw new NotImplementedException();
+			_session.Update(obj, id);
 		}
 
 		public void Update(string entityName, object obj, object id)
 		{
-			throw new NotImplementedException();
+			_session.Update(entityName, obj, id);
 		}
 	}
 }
