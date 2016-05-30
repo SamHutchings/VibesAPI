@@ -9,8 +9,8 @@ create table "User" (
 	PhoneNumber varchar(255),
 	Username varchar(255),
 	DeviceId varchar(255),
-	ValidationKey varchar(255),
-	ValidationKeySent timestamp,
+	ValidationCode varchar(255),
+	ValidationCodeSent timestamp,
 	Validated timestamp,
 	Created timestamp,
 	primary key (Id)

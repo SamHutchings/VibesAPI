@@ -174,7 +174,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ActivateController.cs" />
+    <Compile Include="Controllers\ValidateController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -185,7 +185,9 @@
     </Compile>
     <Compile Include="Infrastructure\ApiNinjectModule.cs" />
     <Compile Include="Infrastructure\CustomExceptionLogger.cs" />
+    <Compile Include="Infrastructure\ModelBinders\UserModelBinder.cs" />
     <Compile Include="Models\AccountEditModel.cs" />
+    <Compile Include="Models\ValidateModel.cs" />
     <Compile Include="Models\VibeModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
