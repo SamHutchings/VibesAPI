@@ -37,8 +37,8 @@ namespace Vibes.Core.Services
 				var twilioService = new TwilioRestClient(__apiKey, __authToken);
 
 				var message = twilioService.SendMessage(
-					user.PhoneNumber,
 					"VIBES",
+					user.PhoneNumber,
 					String.Format("Your code is {0}", user.ValidationCode)
 				);
 			}
