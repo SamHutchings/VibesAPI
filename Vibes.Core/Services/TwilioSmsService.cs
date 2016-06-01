@@ -21,7 +21,7 @@ namespace Vibes.Core.Services
 			__authToken = ConfigurationManager.AppSettings["twilio-auth-token"];
 		}
 
-		public bool SendVerification(User user)
+		public bool SendValidation(User user)
 		{
 			if (user.Validated != null)
 				return false;
@@ -41,13 +41,22 @@ namespace Vibes.Core.Services
 					user.PhoneNumber,
 					String.Format("Your code is {0}", user.ValidationCode)
 				);
+
+				if (message.RestException != null)
+				{
+					_log.ErrorFormat("Could not send validation message to {0}: {1}", user, message.RestException);
+
+					return false;
+				}
 			}
 			catch (Exception ex)
 			{
-				_log.ErrorFormat("Could not send verification message to {0}: {1}", user, ex);
+				_log.ErrorFormat("Could not send validation message to {0}: {1}", user, ex);
 
 				return false;
 			}
+
+			_log.InfoFormat("Sent validation SMS to {0}: {1}", user);
 
 			return true;
 		}

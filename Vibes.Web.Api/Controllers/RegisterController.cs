@@ -17,15 +17,15 @@ namespace Vibes.Web.Api.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var user = GetUser(model);
+				var user = GetUnvalidatedUser(model);
 
 				if (user == null)
 					return BadRequest("User already validated");
 
 				user.GenerateValidationKey();
 
-				if (!SmsService.SendVerification(user))
-					return BadRequest("Unable to send verification message, please try again");
+				if (!SmsService.SendValidation(user))
+					return BadRequest("Unable to send validation message, please try again");
 
 				return Ok(model);
 			}
@@ -33,7 +33,7 @@ namespace Vibes.Web.Api.Controllers
 			return BadRequest(ModelState);
 		}
 
-		User GetUser(RegisterModel model)
+		User GetUnvalidatedUser(RegisterModel model)
 		{
 			var user = Session.Query<User>().Where(x => x.PhoneNumber == model.FormattedPhoneNumber).FirstOrDefault();
 
