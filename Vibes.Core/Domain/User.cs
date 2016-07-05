@@ -17,12 +17,17 @@ namespace Vibes.Core.Domain
 		/// <summary>
 		/// The users name. Displayed to others
 		/// </summary>
-		public virtual string Username { get; set; }
+		public virtual string Name { get; set; }
 
 		/// <summary>
-		/// The current device id for the user
+		/// The users password
 		/// </summary>
-		public virtual string DeviceId { get; set; }
+		public virtual string Password { get; set; }
+
+		/// <summary>
+		/// The salt for the user's password
+		/// </summary>
+		public virtual string PasswordSalt { get; set; }
 
 		/// <summary>
 		/// The validation key the user is sent to validate their phone number
@@ -65,10 +70,10 @@ namespace Vibes.Core.Domain
 
 		public override string ToString()
 		{
-			if (String.IsNullOrWhiteSpace(Username))
+			if (String.IsNullOrWhiteSpace(Name))
 				return PhoneNumber;
 
-			return String.Format("{0} ({1})", Username, PhoneNumber);
+			return String.Format("{0} ({1})", Name, PhoneNumber);
 		}
 	}
 }

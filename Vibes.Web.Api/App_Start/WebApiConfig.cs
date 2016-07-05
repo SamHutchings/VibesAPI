@@ -18,8 +18,6 @@ namespace Vibes.Web.Api
 
 			config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
-			config.Services.Add(typeof(IExceptionLogger), new CustomExceptionLogger());
-
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
 				routeTemplate: "{controller}/{id}/{action}",
