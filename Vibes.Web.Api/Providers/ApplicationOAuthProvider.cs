@@ -1,6 +1,6 @@
 ﻿using Microsoft.Owin.Security.OAuth;
 
-namespace LocalAccountsApp.Providers
+namespace Vibes.Web.Api.Providers
 {
 	public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
 	{

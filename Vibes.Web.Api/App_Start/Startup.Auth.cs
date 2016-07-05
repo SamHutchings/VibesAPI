@@ -1,7 +1,9 @@
 ﻿using Microsoft.Owin;
+using Microsoft.Owin.Security.Infrastructure;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
+using Vibes.Web.Api.Providers;
 
 namespace Vibes.Web.Api.App_Start
 {

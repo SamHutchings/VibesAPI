@@ -13,6 +13,9 @@ namespace Vibes.Web.Api.Models
 		[Required(ErrorMessage = "Please enter your telephone number")]
 		public string PhoneNumber { get; set; }
 
+		[Required(ErrorMessage = "Please provide a password")]
+		public string Password { get; set; }
+
 		[Required(ErrorMessage = "Please enter your country")]
 		public CountryCode? CountryCode { get; set; }
 
