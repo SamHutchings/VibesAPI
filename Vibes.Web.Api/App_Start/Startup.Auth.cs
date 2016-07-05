@@ -33,7 +33,7 @@ namespace Vibes.Web.Api.App_Start
 			{
 				AccessTokenProvider = new AuthenticationTokenProvider()
 			});
-			app.UseOAuthBearerTokens(OAuthOptions);
+			//app.UseOAuthBearerTokens(OAuthOptions);
 
 			app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 

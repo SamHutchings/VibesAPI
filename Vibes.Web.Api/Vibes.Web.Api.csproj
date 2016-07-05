@@ -211,11 +211,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ValidateController.cs" />
-    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\VibeController.cs" />
+    <Compile Include="Services\MembershipService.cs" />
+    <Compile Include="Services\IMembershipService.cs" />
     <Compile Include="Infrastructure\ApiNinjectModule.cs" />
     <Compile Include="Infrastructure\ModelBinders\UserModelBinder.cs" />
     <Compile Include="Models\AccountEditModel.cs" />

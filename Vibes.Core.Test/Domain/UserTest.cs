@@ -24,7 +24,7 @@ namespace Vibes.Core.Test.Domain
 		[TestCase("Test Testman", "+447931443223", ExpectedResult = "Test Testman (+447931443223)")]
 		public string ToStringReturnsCorrectly(string username, string phoneNumber)
 		{
-			var user = new User { Username = username, PhoneNumber = phoneNumber };
+			var user = new User { Name = username, PhoneNumber = phoneNumber };
 
 			return user.ToString();
 		}

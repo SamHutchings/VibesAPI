@@ -7,6 +7,7 @@ using System;
 using System.Configuration;
 using Vibes.Core.Data;
 using Vibes.Core.Services;
+using Vibes.Web.Api.Services;
 
 namespace Vibes.Web.Api.Infrastructure
 {
@@ -15,6 +16,8 @@ namespace Vibes.Web.Api.Infrastructure
 		public override void Load()
 		{
 			Bind<ISmsService>().To<TwilioSmsService>();
+
+			Bind<IMembershipService>().To<MembershipService>().InRequestScope();
 
 			Bind<ILog>().ToMethod(context =>
 					LogManager.GetLogger(context.Request.ParentContext.Plan.Type));
