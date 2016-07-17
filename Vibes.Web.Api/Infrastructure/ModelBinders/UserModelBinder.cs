@@ -1,8 +1,9 @@
-﻿using System;
+﻿using NHibernate;
+using NHibernate.Linq;
+using System;
 using System.Linq;
 using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
-using Vibes.Core.Data;
 using Vibes.Core.Domain;
 
 namespace Vibes.Web.Api.Infrastructure
@@ -12,9 +13,9 @@ namespace Vibes.Web.Api.Infrastructure
 	/// </summary>
 	public class UserModelBinder : IModelBinder
 	{
-		public IDatabaseSession _session;
+		public ISession _session;
 
-		public UserModelBinder(IDatabaseSession session)
+		public UserModelBinder(ISession session)
 		{
 			_session = session;
 		}

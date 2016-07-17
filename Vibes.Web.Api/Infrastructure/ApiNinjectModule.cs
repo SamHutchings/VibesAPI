@@ -1,5 +1,7 @@
 ﻿using FluentNHibernate;
+using FluentNHibernate.Cfg.Db;
 using log4net;
+using NHibernate;
 using Ninject;
 using Ninject.Modules;
 using Ninject.Web.Common;
@@ -16,40 +18,36 @@ namespace Vibes.Web.Api.Infrastructure
 		{
 			Bind<ISmsService>().To<TwilioSmsService>();
 
-			Bind<ILog>().ToMethod(context =>
-					LogManager.GetLogger(context.Request.ParentContext.Plan.Type));
+			Bind<ISessionFactory>().ToMethod(c => GetSessionFactory()).InSingletonScope();
 
-			Bind<ISessionSource>()
-				.ToMethod(x => new SessionSourceFactory().CreateSessionSource(ConfigurationManager.ConnectionStrings["default"].ConnectionString))
-				.InSingletonScope();
+			Bind<ILog>().ToMethod(x => LogManager.GetLogger(x.Request.Target.Member.DeclaringType));
 
-			Bind<IDatabaseSession>().ToMethod(x => new DatabaseSession(x.Kernel.Get<ISessionSource>().CreateSession()))
+			Bind<ISession>().ToMethod(ctx => ctx.Kernel.Get<ISessionFactory>().OpenSession())
 				.InRequestScope()
-				.OnActivation(session =>
-				{
-					session.BeginTransaction();
-				})
-				.OnDeactivation((context, session) =>
+				.OnActivation(s => s.BeginTransaction())
+				.OnDeactivation((c, s) =>
 				{
 					try
 					{
-						if (session.Transaction.IsActive)
-							session.Transaction.Commit();
+						s.Transaction.Commit();
 					}
-					catch (Exception ex)
+					catch (Exception e)
 					{
-						Kernel.Get<ILog>().Error(ex);
+						Kernel.Get<ILog>().Error(e);
 
-						session.Transaction.Rollback();
+						s.Transaction.Rollback();
 					}
-					finally
-					{
-						if (session.IsOpen)
-							session.Close();
 
-						session.Dispose();
-					}
+					s.Close();
+					s.Dispose();
 				});
+		}
+
+		public static ISessionFactory GetSessionFactory()
+		{
+			var properties = PostgreSQLConfiguration.PostgreSQL82.ConnectionString(ConfigurationManager.ConnectionStrings["default"].ConnectionString).ToProperties();
+
+			return new SessionSource(properties, new CustomPersistenceModel()).SessionFactory;
 		}
 	}
 }

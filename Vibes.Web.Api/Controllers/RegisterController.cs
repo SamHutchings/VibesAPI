@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using NHibernate.Linq;
+using Ninject;
 using System.Linq;
 using System.Web.Http;
 using Vibes.Core.Domain;

@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using NHibernate;
+using Ninject;
 using System.Web.Http;
 using Vibes.Core.Data;
 using Vibes.Core.Domain;
@@ -12,7 +13,7 @@ namespace Vibes.Web.Api.Controllers
 	public class BaseApiController : ApiController
 	{
 		[Inject]
-		public IDatabaseSession Session { get; set; }
+		public ISession Session { get; set; }
 
 		public User AuthorisedUser
 		{

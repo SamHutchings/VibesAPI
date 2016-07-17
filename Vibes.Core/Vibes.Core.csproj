@@ -89,10 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Conventions\CustomReferenceConvention.cs" />
-    <Compile Include="Data\DatabaseSession.cs" />
-    <Compile Include="Data\GenerateSql.cs" />
-    <Compile Include="Data\IDatabaseSession.cs" />
-    <Compile Include="Data\SessionSourceFactory.cs" />
     <Compile Include="Data\VibesMappingConfiguration.cs" />
     <Compile Include="Data\CustomPersistenceModel.cs" />
     <Compile Include="Domain\DomainObject.cs" />

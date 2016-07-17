@@ -2,6 +2,7 @@
 {
 	using Core.Domain;
 	using Models;
+	using NHibernate.Linq;
 	using System.Linq;
 	using System.Web.Http;
 
